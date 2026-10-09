@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv("books_dataset.csv")
+
+print(f"Всего записей: {len(df)}")
+print(f"Столбцов: {len(df.columns)}")
+print(f"\nПропусков по полям:")
+print(df.isnull().sum())
+print(f"\nРаспределение по рейтингам:")
+print(df["rating"].value_counts())
+print(f"\nУникальных книг: {df['title'].nunique()}")
+print(f"\nПервые 5 записей:")
+print(df.head())
